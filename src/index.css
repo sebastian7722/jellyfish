@@ -237,7 +237,7 @@ height: 0px;
 /* Home */
 
 
-.article {
+.article-home {
   padding: 1.8rem;
   padding-top: calc(1rem + var(--nav-size));
   height: calc(100vh - (var(--nav-size) + 2.8rem));
@@ -293,6 +293,13 @@ h3.author {
 }
 
 /* Shop */
+
+.article-shop {
+    min-height: calc(100vh - (var(--nav-size) + 2.8rem));
+    padding: 1.8rem;
+    padding-top: calc(1rem + var(--nav-size));
+    background: var(--bg);
+}
 
 .shop-cards {
     font-family: 'Google Sans Text',sans-serif;

@@ -2,7 +2,7 @@ import art from './img/art.svg'
 
 function Home() {
     return (
-        <main className="article">
+        <main className="article-home">
             <section className="shop-card home-card">
                 <img src={art} alt="beautiful landscape art" />
                 <h1 className="title">My React Website</h1>
