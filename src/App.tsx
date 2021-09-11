@@ -1,6 +1,4 @@
-import React from 'react';
-import './App.css';
-import Navbar from './components/Navbar';
+import Navbar from './components/Navigation';
 import Home from './Home'
 import Shop from './Shop'
 import {
@@ -8,17 +6,21 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+import { useState } from 'react';
 
 function App() {
+
+  const [open, setOpen] = useState(false);
+
   return (
     <Router>
-      <Navbar />
+      <Navbar open={open} setOpen={setOpen} />
       <Switch>
         <Route path="/shop">
           <Shop />
         </Route>
         <Route path="/">
-          <Home />
+          <Home/>
         </Route>
       </Switch>
     </Router>
