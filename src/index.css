@@ -236,16 +236,27 @@ height: 0px;
 
 /* Home */
 
+
 .article {
-  padding-top: var(--nav-size);
-  position: relative;
-  width: 100%;
-  min-height: calc(100vh - var(--nav-size));
+  padding: 1.8rem;
+  padding-top: calc(1rem + var(--nav-size));
+  height: calc(100vh - (var(--nav-size) + 2.8rem));
   background: var(--bg);
-  overflow: hidden;
 }
 
-.article img {
+section.home-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  padding: 0;
+}
+
+section.home-card:hover {
+  transform: scale(1);
+}
+
+section.home-card img {
   position: absolute;
   top: 0;
   left: 0;
@@ -263,6 +274,7 @@ h1.title, h3.author {
 }
 
 h1.title {
+  top: 0;
   font-family: 'Mogra', 'sans-serif';
   font-size: 7.5vw;
   margin: 4vw;
@@ -282,10 +294,6 @@ h3.author {
 
 /* Shop */
 
-.article-shop {
-  padding-top: calc(var(--nav-size) + .5rem);
-}
-
 .shop-cards {
     font-family: 'Google Sans Text',sans-serif;
     font-size: 0.875rem;
@@ -300,6 +308,7 @@ h3.author {
     padding-right: 1.5rem;
     justify-content: center;
     min-height: 70vh;
+    margin-top: 0.5rem;
 }
 
 @media screen and (max-width: 639px) {
