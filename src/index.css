@@ -20,7 +20,7 @@ code {
   --text-color: #dadce1;
   --primary: #dbec8d;
   --nav-size: 4rem;
-  --dropdown-size: calc(var(--nav-size) * 3);
+  --dropdown-size: calc((var(--nav-size) * 2.5) * .8);
   --nav-pad1: 0.75rem;
   --nav-pad2: 2rem;
   --speed: 500ms;
@@ -110,55 +110,43 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100vw;
-  height: var(--dropdown-size);
+  height: calc(var(--dropdown-size));
   padding-top: var(--nav-size);
 }
 
 .dropdown-links {
   display: flex;
-  flex-direction: column;
-}
-
-@media screen and (min-width: 320px) {
-  .dropdown-links {
-    flex-direction: row;
-  }
+  flex-direction: row;
 }
 
 .nav-home, .nav-shop {
   margin: 0 1.2rem;
-  margin-bottom: 1rem;
+  margin-bottom: .5rem;
 }
 
 .nav-btn {
-  margin-top: -.5rem;
-}
-
-@media screen and (min-width: 320px) {
-  .nav-btn {
-    margin-top: 1rem;
-  }
+  margin-top: 0.7rem;
 }
 
 .slide-enter {
   transform: translateY(calc(0px - var(--dropdown-size)));
   height: 0px;
-}
-.slide-enter-active {
+ }
+ .slide-enter-active {
   transform: translateY(0);
   height: var(--dropdown-size);
   transition: all 350ms ease;
-}
+ }
 .slide-exit {
   transform: translateY(0);
   height: var(--dropdown-size);
   transition: all 350ms ease;
 }
 .slide-exit-active {
-transform: translateY(calc(0px - var(--dropdown-size)));
-height: 0px;
+  transform: translateY(calc(0px - var(--dropdown-size)));
+  height: 0px;
 }
 
 .btn {

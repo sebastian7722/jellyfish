@@ -40,7 +40,7 @@ function Navigation(props: { open: boolean; setOpen: Dispatch<SetStateAction<boo
                     {!isTablet && <Hamburger open={open} setOpen={setOpen} />}
                 </div>
             </div>
-            <DropdownMenu open={open} linkHome={linkHome} setLinkHome={setLinkHome} linkShop={linkShop} setLinkShop={setLinkShop} />
+            <DropdownMenu open={open} setOpen={setOpen} linkHome={linkHome} setLinkHome={setLinkHome} linkShop={linkShop} setLinkShop={setLinkShop} />
         </Navbar>
     );
 }
@@ -109,13 +109,14 @@ function Hamburger(props: { open: boolean; setOpen: Dispatch<SetStateAction<bool
     );
 }
 
-function DropdownMenu(props: { open: boolean; linkHome: string; linkShop: string; setLinkHome: Dispatch<SetStateAction<string>>; setLinkShop: Dispatch<SetStateAction<string>>; }) {
+function DropdownMenu(props: { open: boolean; setOpen: Dispatch<SetStateAction<boolean>>; linkHome: string; linkShop: string; setLinkHome: Dispatch<SetStateAction<string>>; setLinkShop: Dispatch<SetStateAction<string>>; }) {
     const linkHome = props.linkHome;
     const linkShop = props.linkShop;
     const setLinkHome = props.setLinkHome;
     const setLinkShop = props.setLinkShop;
 
     const open = props.open;
+    const setOpen = props.setOpen;
 
     return (
         <CSSTransition
@@ -127,13 +128,13 @@ function DropdownMenu(props: { open: boolean; linkHome: string; linkShop: string
             <div className="dropdown">
                 <div className="dropdown-links">
                     <div className="nav-home">
-                        <Link className={linkHome} to="/" onClick={() => { setLinkHome("link link-active"); setLinkShop("link") }} >Home</Link>
+                        <Link className={linkHome} to="/" onClick={() => { setLinkHome("link link-active"); setLinkShop("link"); setOpen(false); }} >Home</Link>
                     </div>
                     <div className="nav-shop">
-                        <Link className={linkShop} to="/shop" onClick={() => { setLinkShop("link link-active"); setLinkHome("link") }} >Shop</Link>
+                        <Link className={linkShop} to="/shop" onClick={() => { setLinkShop("link link-active"); setLinkHome("link"); setOpen(false); }} >Shop</Link>
                     </div>
                 </div>
-                <a className="nav-btn" href="https://github.com/sebastian7722/jellyfish.git" target="_blank" rel="noreferrer" >
+                <a className="nav-btn" href="https://github.com/sebastian7722/jellyfish.git" target="_blank" rel="noreferrer" onClick={() => setOpen(false)} >
                     <div className="btn">
                         <img src={github} className="github" alt="github icon" />
                         <div className="btn-text">GitHub</div>
