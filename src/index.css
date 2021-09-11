@@ -257,7 +257,7 @@ h1.title, h3.author {
   position: absolute;
   color: #fff;
   white-space: nowrap;
-  font-size: 1rem;
+  font-size: .875rem;
   z-index: 9;
 }
 
@@ -274,7 +274,7 @@ h3.author {
   margin: 1rem;
 }
 
-@media screen and (min-width: 560px) {
+@media screen and (min-width: 460px) {
   h3.author {
     font-size: 3vw;
   }
