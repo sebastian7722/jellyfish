@@ -1,26 +1,29 @@
 import Navbar from './components/Navigation';
-import Home from './Home'
-import Shop from './Shop'
+import Home from './Home';
+import Shop from './Shop';
+import Forum from './Forum';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
 } from "react-router-dom";
-import { useState } from 'react';
+import { AuthProvider } from './lib/firebaseContext';
 
 function App() {
-
-  const [open, setOpen] = useState(false);
-
   return (
     <Router>
-      <Navbar open={open} setOpen={setOpen} />
+      <Navbar />
       <Switch>
+        <Route path="/forum">
+          <AuthProvider>
+            <Forum />
+          </AuthProvider>
+        </Route>
         <Route path="/shop">
           <Shop />
         </Route>
         <Route path="/">
-          <Home/>
+          <Home />
         </Route>
       </Switch>
     </Router>
