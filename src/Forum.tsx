@@ -41,9 +41,9 @@ function Forum() {
             {isSignedIn && <PostComponent logout={logout} userData={userData} refreshFetch={refreshFetch} setRefreshFetch={setRefreshFetch} />}
             <div className="post-cards">
                 {(posts && posts.length > 0) && posts.map((post: Post) => {
-                    const { id, photoURL, username, time, content } = post;
+                    const { id } = post;
                     return (
-                        <PostCard key={id} photoURL={photoURL} username={username} time={time} content={content} />
+                        <PostCard key={id} {...post} />
                     );
                 })}
             </div>
