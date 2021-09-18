@@ -35,10 +35,17 @@ function Forum() {
         content: any;
     }
 
+    const postComponentProps = {
+        logout: logout,
+        userData: userData,
+        refreshFetch: refreshFetch,
+        setRefreshFetch: setRefreshFetch
+    }
+
     return (
         <main className="content">
             {!isSignedIn && <SignComponent signIn={signIn} />}
-            {isSignedIn && <PostComponent logout={logout} userData={userData} refreshFetch={refreshFetch} setRefreshFetch={setRefreshFetch} />}
+            {isSignedIn && <PostComponent {...postComponentProps} />}
             <div className="post-cards">
                 {(posts && posts.length > 0) && posts.map((post: Post) => {
                     const { id } = post;
